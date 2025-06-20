@@ -1,0 +1,100 @@
+# 📖 ReadMe
+Instructions on how to run this and make changes to the project
+
+## 🛠️ What you need to install
+
+1. **Node.js**
+   - Download from [nodejs.org](https://nodejs.org/)
+   - Choose the LTS (Long Term Support) version for best stability.
+2. **Git**
+   - Download from [git-scm.com](https://git-scm.com/)
+   - Use the default options during installation.
+3. **Visual Studio Code (VS Code)**
+   - Download from [code.visualstudio.com](https://code.visualstudio.com/)
+   - During installation, check the box that says **"Add 'Open with Code' action to Windows Explorer file context menu"**. This makes it easy to open folders in VS Code.
+
+## 💻 Getting the project on your computer
+
+1. **Open VS Code**
+2. Open the built-in terminal in VS Code:
+   - Click on `Terminal` in the top menu, then `New Terminal`.
+3. In the terminal, type the following commands one by one:
+   - `git clone <project-url>` (replace `<project-url>` with the link to this project)
+   - `cd <project-folder>` (replace `<project-folder>` with the name of the folder that was created)
+   - `git pull` (to make sure you have the latest version)
+   - `npm install` (this installs everything the project needs)
+   - `npm run dev` (this starts the project)
+4. Open your web browser and go to [http://localhost:3000](http://localhost:3000)
+
+## ✏️ Making changes
+
+1. **Edit using VS Code**
+   - Open the project folder in VS Code (right-click the folder and select `Open with Code` if you set this up during install).
+   - Make your changes to the files as needed.
+2. **Using the built-in Git GUI in VS Code**
+   - Click the Source Control icon (it looks like a branch) on the left sidebar.
+   - You will see a list of files you changed.
+   - Type a short message describing your changes in the message box at the top.
+   - Click the checkmark icon to commit your changes.
+   - To send your changes to the online project, click the three dots (`...`) at the top of the Source Control panel and select `Push`.
+3. **Working with branches**
+   - Branches let you work on new features or fixes without affecting the main project.
+   - To create a new branch, click the branch name at the bottom left of VS Code, then select `Create new branch`.
+   - Switch between branches the same way.
+   - Always make a new branch for your changes if you are not sure.
+4. **Making a Pull Request**
+   - After pushing your branch, go to the project page on GitHub.
+   - You will see a button to create a Pull Request. Click it and follow the instructions.
+   - This lets others review your changes before they are added to the main project.
+
+If you get stuck, ask for help!
+
+## 📝 Create and Editing Content in Detail
+
+### 🗒️ What is Markdown/MD/MDX?
+- **Markdown** (files ending in `.md`) is a simple way to write formatted text using plain text. You can make headings, lists, links, images, and more without needing to know HTML.
+- **MDX** (files ending in `.mdx`) is like Markdown, but it also lets you use React components and more advanced features. In this project, most documentation pages use MDX.
+- You can learn more about Markdown here: [Markdown Guide](https://www.markdownguide.org/basic-syntax/)
+
+### 🆕 How to Create a New Page
+1. In VS Code, open the folder where you want to add your new page. For example, to add a new documentation page, open `src/app/docs/`.
+2. Right-click the folder and select **New File**.
+3. Name your file something like `your-topic/page.mdx` (for example, `my-guide/page.mdx`).
+4. Start your file with a heading, like this:
+   ```mdx
+   # My Guide Title
+   ```
+5. Write your content using Markdown formatting. You can add headings, lists, images, and even React components if needed.
+6. Save the file. Your new page will be available in the documentation site after you restart the development server (if it doesn't appear right away).
+
+**Tip:**
+- Use headings (`#`, `##`, `###`) to organize your content.
+- Use lists (`- item`) for steps or bullet points.
+- You can preview Markdown in VS Code by right-clicking the file and selecting **Open Preview**.
+
+If you need more help, check the [Markdown Guide](https://www.markdownguide.org/basic-syntax/) or ask a team member.
+
+### 📊 Using Mermaid Diagrams in MDX or HTML
+
+You can add diagrams and flowcharts to your documentation using [Mermaid](https://mermaid-js.github.io/). Mermaid lets you write simple text to create diagrams like flowcharts, sequence diagrams, and more.
+
+#### 🖼️ How to use Mermaid in MDX
+1. In your `.mdx` file, you can use a special code block with `mermaid` as the language:
+   ```mermaid
+   graph TD;
+     A-->B;
+     A-->C;
+     B-->D;
+     C-->D;
+   ```
+   This will show a simple flowchart.
+2. If your project supports Mermaid out of the box, the diagram will appear automatically. If not, ask a developer to help enable Mermaid support in the documentation site.
+
+#### 🌐 How to use Mermaid in HTML
+- If you need to use Mermaid in a regular HTML file, you can include the Mermaid library and add your diagram in a `<pre class="mermaid">` block. Example:
+- For most users, using the MDX code block method is easiest.
+
+**Tip:**
+- You can find more examples and diagram types in the [Mermaid documentation](https://mermaid-js.github.io/mermaid/#/).
+
+If you want to add a diagram and it doesn't show up, ask a developer for help to make sure Mermaid is enabled in the project.
