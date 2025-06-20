@@ -1,0 +1,166 @@
+# Developer Team
+
+## 🧹 ESLint
+- We use ESLint to automatically check our code for errors and enforce consistent code style. This helps catch mistakes early and keeps our codebase uniform. All team members should have ESLint enabled in their editors, and code should pass linting before being merged.
+- If you encounter an error with ESLint, it is intentional for you to fix
+
+## 🏷️ Naming Convention
+
+### Why Follow Naming Conventions?
+Consistent naming conventions are essential for several reasons:
+- **Readability:** Clear and predictable names make code easier to read and understand for everyone on the team, including new members.
+- **Maintainability:** When code follows a standard naming pattern, it's easier to maintain, refactor, and debug.
+- **Collaboration:** Consistent naming reduces confusion and helps team members work together more efficiently, as everyone knows what to expect.
+- **Scalability:** As projects grow, standardized naming helps keep the codebase organized and manageable.
+- **Professionalism:** Following conventions demonstrates attention to detail and professionalism, which is important for both internal and external stakeholders.
+
+### 📝 General
+- **Install Prettier**, it is an extension in VS Code
+- **Use clear, descriptive names** for variables, functions, and files.
+    - *Example: `getUserProfile` instead of `getData`.*
+    - Even if the name might be long, it's better to be descriptive than unreadable. 
+- **Avoid abbreviations** unless they are well-known (e.g., API, URL).
+
+
+### NextJS (Frontend Web Development)
+- Folders: 
+  - kebab-case
+- Files: 
+  - PascalCase
+- Functions, Variables, Parameters: 
+  - camelCase
+- Types, Interfaces, Classes: 
+  - PascalCase
+
+### Backend Development
+- T.B.A because we need someone experienced in the backend to write this. 
+
+### Flutter 
+- Folders, Files: 
+  - snake_case
+- Functions, Variables, Parameters: 
+  - camelCase
+- Interfaces, Classes: 
+  - PascalCase
+
+
+## Follow key software principles, [You can read about it here](https://www.geeksforgeeks.org/blogs/7-common-programming-principles-that-every-developer-must-follow/)
+  - **SoC (Separation of Concerns):**  
+    Keep different parts of your code focused on a single responsibility.  
+    *Example: UI components should only handle display, not data fetching.*
+
+  - **DRY (Don't Repeat Yourself):**  
+    Avoid duplicating code. If you find yourself copying and pasting, consider making a function or component.  
+    *Example: Create a `Button` component instead of writing button code in multiple places.*
+
+  - **KISS (Keep It Simple, Stupid):**  
+    Write code that is simple and easy to understand. Don't overcomplicate solutions.  
+    *Example: Use built-in array methods like `.map()` instead of writing complex loops.*
+
+  - **YAGNI (You Aren't Gonna Need It):**  
+    Only implement what you need now. Don't add features or code "just in case."  
+    *Example: Don't build an export-to-CSV feature unless it's actually required.*
+
+
+## Architecture
+### Website
+#### Frontend
+- [View The Tech Stack Here](/docs/software-website-team/developer-roles/tech-stack) 
+##### Folder Structure
+my-next-ts-app/
+├── app/                    # App Router directory (Next.js 13+)
+│   ├── layout.tsx          # Root layout (required)
+│   ├── page.tsx            # Home page
+│   ├── globals.css         # Global styles
+│   ├── [dynamic]/          # Dynamic routes
+│   │   ├── page.tsx
+│   │   └── layout.tsx
+│   ├── api/                # API routes
+│   │   └── route.ts
+│   └── favicon.ico         # Favicon
+├── components/             # Reusable UI components
+│   ├── ui/                 # Shared UI components (e.g., buttons, cards)
+│   │   ├── Button.tsx
+│   │   └── Card.tsx
+│   ├── layout/             # Layout components (e.g., header, footer)
+│   │   ├── Header.tsx
+│   │   └── Footer.tsx
+│   └── features/           # Feature-specific components
+│       └── auth/
+│           ├── LoginForm.tsx
+│           └── SignupForm.tsx
+
+{/* Detailed explanation of the components folder structure */}
+**Components Folder Structure:**
+- `ui/`: Contains shared, reusable UI elements that are generic and can be used across different features and pages. Examples: Buttons, cards, modals, input fields, etc. This promotes reusability and consistency in the UI.
+- `layout/`: Contains layout components that define the structure of pages or sections, such as headers, footers, sidebars, and navigation bars. Keeps layout logic separate from feature logic and UI elements.
+- `features/`: Contains components that are specific to a particular feature or domain of the application. These are often composed of UI components and may include business logic. Examples: Authentication forms (LoginForm, SignupForm), user profile widgets, dashboard panels, etc. This keeps feature-specific code organized and encapsulated, making it easier to maintain and scale.
+
+├── hooks/                  # Custom React hooks
+│   ├── useAuth.ts
+│   └── useFetch.ts
+├── lib/                    # Utilities and shared logic
+│   ├── api/                # API client functions
+│   │   └── fetcher.ts
+│   ├── constants/          # Constants (e.g., API URLs, themes)
+│   │   └── index.ts
+│   ├── types/              # TypeScript type definitions
+│   │   └── user.ts
+│   └── utils/              # Helper functions
+│       └── formatDate.ts
+├── public/                 # Static assets
+│   ├── images/
+│   │   └── logo.png
+│   ├── fonts/
+│   └── robots.txt
+├── tests/                  # Test files
+│   ├── components/
+│   │   └── Button.test.tsx
+│   ├── lib/
+│   │   └── formatDate.test.ts
+│   └── __mocks__/          # Mock data for tests
+│       └── user.ts
+├── .eslintrc.json          # ESLint configuration
+├── .prettierrc             # Prettier configuration
+├── next.config.js          # Next.js configuration
+├── package.json            # Project dependencies
+├── tsconfig.json           # TypeScript configuration
+├── tailwind.config.js      # Tailwind CSS configuration (if used)
+├── jest.config.js          # Jest configuration (if used for testing)
+├── README.md               # Project documentation
+└── .gitignore              # Git ignore file
+
+#### Backend
+- [View The Tech Stack Here](/docs/software-website-team/developer-roles/tech-stack)
+> T.B.A. Because I don't know enough of backend to cover this, we need a Lead Backend Developer
+
+### App
+- [View The Tech Stack Here](/docs/software-website-team/developer-roles/tech-stack)
+> Since the Tech Stack we are using is OOP and Flutter, the style will be different. 
+- Folders, Files, Functions, Variables: 
+    - camelCase 
+> Since I have never worked on a large Flutter project and we will mainly be working on small flutter projects for now, this is the best architecture for small projects. It is also fast to setup. 
+my_simple_flutter_app/
+├── android/
+├── ios/
+├── lib/
+│   ├── main.dart
+│   ├── models/             # Data models
+│   │   └── user.dart
+│   ├── screens/            # UI screens
+│   │   ├── login_screen.dart
+│   │   └── home_screen.dart
+│   ├── widgets/            # Reusable widgets
+│   │   └── custom_button.dart
+│   ├── services/           # Business logic and API calls
+│   │   └── auth_service.dart
+│   └── utils/              # Helper functions
+│       └── constants.dart
+├── assets/
+│   ├── images/
+│   └── fonts/
+├── test/
+│   └── widget_test.dart
+├── pubspec.yaml
+├── analysis_options.yaml
+└── .gitignore
