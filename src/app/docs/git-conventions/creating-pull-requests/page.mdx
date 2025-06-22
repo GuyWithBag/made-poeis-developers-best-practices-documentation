@@ -1,0 +1,49 @@
+# 🔀 Creating Pull Requests
+When you are creating a pull request, you must have these
+
+A screenshot of the feature (If available)
+
+[Please refer to this guide](https://medium.com/@regondaakhil/best-practices-for-git-branch-naming-conventions-and-pr-creation-on-github-14a451d345dc)
+
+Creating Pull Requests (PRs) on GitHub
+
+When creating a PR on GitHub, it's crucial to follow best practices to ensure clarity and ease of review.
+#### 1. Title
+
+The title should be concise yet descriptive, often including the JIRA ticket number for easy reference.
+
+Example:
+
+`[MY-PROJ-1234] Implement user authentication feature`
+
+#### 2. Description
+
+The description should provide detailed information about what the PR does, why it is needed, and any other relevant context. It should also reference the JIRA story.
+
+```
+### Summary
+
+This PR implements the user authentication feature as described in [MY-PROJ-1234](https://jira.example.com/browse/PROJ-1234).
+
+### Details
+
+- Added login functionality
+- Implemented JWT-based authentication
+- Updated user model with authentication fields
+- Wrote tests for the authentication logic
+
+### JIRA Issue
+
+[PROJ-1234](https://jira.example.com/browse/MY-PROJ-1234)
+
+```
+
+#### 3. Linking JIRA Stories
+
+To link a JIRA story to a PR, include the JIRA issue key in the title and description of the PR. Additionally, you can use smart commits to transition JIRA issues directly from the commit messages.
+
+Example:
+
+`git commit -m "MY-PROJ-1234 Implement user authentication"`
+
+By referencing the JIRA issue key (MY-PROJ-1234) in your commit message, the JIRA issue will be automatically updated with the commit information.
