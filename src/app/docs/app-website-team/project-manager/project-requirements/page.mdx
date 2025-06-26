@@ -1,0 +1,435 @@
+# ⏱️ Project Requirements and Duration Estimation
+- Requirements to keep in mind when working with the project management module. 
+- This is a very important step as it will allow us to get a clear estimation of the project scope and timeline, and ensure that all team members are on the same page.
+### Why calculate durations? 
+- Project durations can help us estimate the time required to finish the project. 
+- This will a foundation for our understanding in how much the project should be worth and how long it would take. 
+- Duration could also help us estimate employee salary, whether per hour or other methods. 
+- This will also help us plan for our next project and what our next action or motive should be, by worrying less about the what ifs and how long the project will take. 
+
+--- 
+
+
+**Notes:** #AIGenerated
+- "d" = days of work (assume 1 day = 8 hours of focused work).
+- Ranges are based on the lower and upper bounds of typical durations for each task.
+- Some tasks can be done in parallel, so total project duration may be less than the sum of all tasks.
+- UI/UX design is assumed to be done before or in parallel with development.
+
+## Complexity Level Tags
+To help estimate and communicate the effort required for different requirements or components that are not listed here, you can use standardized complexity tags. Each tag represents a typical range of work days needed to complete a task, making it easier to categorize and plan project work.
+
+- **Simple** (`Simple`): 0.25 – 0.5 days
+  - Straightforward tasks with minimal logic or UI, such as basic buttons, static text, or simple style changes.
+- **Moderate** (`Moderate`): 1 – 3 days
+  - Tasks with some logic, integration, or moderate UI/UX, such as forms with validation, list views, or basic API integration.
+- **Complex** (`Complex`): 3 – 5 days
+  - Tasks involving advanced logic, multiple integrations, or sophisticated UI/UX, such as dashboards, custom interactive components, or multi-step workflows.
+
+> Assigning these tags to requirements helps teams quickly assess scope, prioritize work, and communicate expectations with stakeholders.
+
+## First of All 
+We need to see everybody's schedule. There is a website where users/employees can input their availability through a calendar (weekly). 
+- This is necessary to do every project, if everybody is working in a hybrid or flexible schedule. 
+- We also need this information so that we can schedule meetings. 
+
+## Pages
+> This will describe the type of pages, their duration, from easiest to hardest.
+
+#### 1. Static Content Page (e.g., About, FAQ) (0.5 - 1 day)
+- Simple pages with mostly static text and images.
+- Minimal interactivity or dynamic data.
+- **Features Needed:**
+  - Static content rendering (Markdown/HTML)
+  - Responsive layout
+  - Basic navigation
+  - SEO meta tags
+- **Examples:**
+  1. About Us
+  2. FAQ
+  3. Privacy Policy
+  4. Terms of Service
+  5. Contact Information
+
+#### 2. List/Overview Page (0.5 - 2 days)
+- Displays a list of items (e.g., blog posts, products).
+- May include basic filtering or sorting.
+- Highly depends on the complexity, if it has filtering and fetching. But will mostly take the same amount of time as the Static Content Page
+- **Features Needed:**
+  - Data fetching (from API or static source)
+  - List/grid display
+  - Pagination or infinite scroll (optional)
+  - Search/filter functionality (optional)
+  - Sorting options (optional)
+  - Loading and empty states
+- **Examples:**
+  1. Blog Posts List
+  2. Product Catalog
+  3. User Directory
+  4. Event Listings
+
+#### 3. Detail Page (1 - 2 days)
+- Shows detailed information about a single item (e.g., blog post, product).
+- May include related items or comments. 
+- Uses dynamic routing
+- **Features Needed:**
+  - Dynamic routing (based on item ID/slug)
+  - Data fetching for single item
+  - Display of item details (text, images, etc.)
+  - Related items or comments section (optional)
+  - SEO meta tags for item
+  - Error handling for not found
+- **Examples:**
+  1. Blog Post Detail
+  2. Product Detail
+  3. User Profile View
+  4. Event Detail
+
+#### 4. Form Page (Contact, Feedback, Registration) (1 - 2 days)
+- Includes input validation, submission handling, and feedback to the user.
+- May require integration with backend or third-party services.
+- This highly depends on what kind of forms, but it shouldn't take longer than that
+- **Features Needed:**
+  - Form fields and layout
+  - Client-side validation
+  - Server-side validation (optional)
+  - Submission handling (API integration)
+  - Success/error feedback messages
+  - Spam protection (CAPTCHA, honeypot, etc.)
+  - Accessibility considerations
+- **Examples:**
+  1. Contact Form
+  2. Feedback Submission
+  3. User Registration
+  4. Password Reset
+  5. Newsletter Signup
+
+#### 5. Dashboard Page (2 - 4 days)
+- Displays dynamic data, charts, and summaries.
+- Often requires API integration and user-specific data.
+- **Features Needed:**
+  - Authentication and authorization
+  - Data fetching for user-specific content
+  - Data visualization (charts, graphs)
+  - Widgets/cards for summaries
+  - Responsive layout
+  - Loading and error states
+- **Examples:**
+  1. Admin Dashboard
+  2. User Dashboard
+  3. Analytics Overview
+  4. Project Summary
+
+#### 6. Profile/Settings Page (2 - 3 days)
+- Allows users to view and update their information.
+- Includes form handling, validation, and sometimes file uploads.
+- **Features Needed:**
+  - Authentication (user must be logged in)
+  - Data fetching for user profile
+  - Editable forms for user data
+  - File upload (profile picture, etc.)
+  - Client/server-side validation
+  - Save/cancel actions
+  - Success/error feedback
+- **Examples:**
+  1. Edit Profile
+  2. Account Settings
+  3. Change Password
+  4. Notification Preferences
+
+#### 7. Admin/Management Page (3 - 5 days)
+- Complex interfaces for managing content, users, or settings.
+- Includes tables, filters, bulk actions, and permissions.
+- **Features Needed:**
+  - Authentication and role-based access control
+  - Data tables with sorting/filtering
+  - CRUD operations (Create, Read, Update, Delete)
+  - Bulk actions (delete, update, etc.)
+  - Modal dialogs for editing/confirmation
+  - Audit logs or activity tracking (optional)
+  - Responsive and accessible UI
+- **Examples:**
+  1. User Management
+  2. Content Management (CMS)
+  3. Order Management
+  4. Role/Permission Management
+
+#### 8. Custom Interactive Page (4 - 7 days)
+- Highly interactive, such as drag-and-drop builders, real-time updates, or custom visualizations.
+- Requires advanced frontend logic and thorough testing.
+- **Features Needed:**
+  - Real-time data updates (WebSockets, polling)
+  - Drag-and-drop or other custom UI interactions
+  - State management (local/global)
+  - Undo/redo functionality (optional)
+  - Performance optimizations
+  - Accessibility for custom controls
+  - Error handling and user feedback
+- **Examples:**
+  1. Kanban Board
+  2. Drag-and-Drop Page Builder
+  3. Real-Time Chat
+  4. Interactive Data Visualization
+
+---
+
+## Components
+> This section describes common reusable components, their typical duration, and what is involved in their implementation.
+
+#### 1. Button (0.25 - 0.5 days)
+- Basic clickable element, may include icons or loading states.
+- **Features Needed:**
+  - Customizable styles (primary, secondary, etc.)
+  - Disabled/loading states
+  - Accessibility (keyboard, ARIA labels)
+  - Optional icons
+- **Examples:**
+  1. Primary Button
+  2. Icon Button
+  3. Submit Button
+
+#### 2. Modal/Dialog (0.5)
+- Overlay for alerts, confirmations, or forms.
+- **Features Needed:**
+  - Open/close logic
+  - Focus management and accessibility
+  - Custom content support
+  - Animation (optional)
+- **Examples:**
+  1. Confirmation Dialog
+  2. Form Modal
+  3. Alert Modal
+
+#### 3. Input Field (0.25 - 0.5 days)
+- Text, number, or other input types with validation.
+- **Features Needed:**
+  - Label and placeholder
+  - Validation and error display
+  - Accessibility
+  - Support for different types (text, password, etc.)
+- **Examples:**
+  1. Text Input
+  2. Password Input
+  3. Number Input
+
+#### 4. Dropdown/Select (0.5 - 1 day)
+- Allows users to select from a list of options.
+- **Features Needed:**
+  - List of options
+  - Keyboard navigation
+  - Custom rendering (optional)
+  - Accessibility
+- **Examples:**
+  1. Country Selector
+  2. Status Dropdown
+  3. Multi-select Dropdown
+
+#### 5. Table/Data Grid (1 - 2 days)
+- Displays tabular data, may include sorting/filtering.
+- **Features Needed:**
+  - Column definitions
+  - Sorting and filtering (optional)
+  - Pagination (optional)
+  - Responsive design
+  - Loading/empty states
+- **Examples:**
+  1. User List Table
+  2. Orders Table
+  3. Product Inventory Grid
+
+#### 6. Card (0.5 - 1 day)
+- Container for displaying grouped information.
+- **Features Needed:**
+  - Customizable content
+  - Optional actions (buttons, links)
+  - Responsive layout
+- **Examples:**
+  1. Product Card
+  2. User Profile Card
+  3. Dashboard Summary Card
+
+#### 7. Notification/Toast (0.5 - 1 day)
+- Temporary messages for feedback or alerts.
+- **Features Needed:**
+  - Show/hide logic
+  - Different types (success, error, info)
+  - Auto-dismiss
+  - Accessibility
+- **Examples:**
+  1. Success Toast
+  2. Error Notification
+  3. Info Banner
+
+#### 8. Loader/Spinner (0.25 - 0.5 days)
+- Indicates loading state for async actions.
+- **Features Needed:**
+  - Animation
+  - Customizable size/color
+  - Accessibility (aria-busy)
+- **Examples:**
+  1. Page Loader
+  2. Inline Spinner
+  3. Button Loader
+
+---
+
+
+## Features
+### Examples of this are: 
+#### CMS (Content Management System) (3 days - 2.5 weeks)
+- Allows admins to manage content. Longer due to custom fields, permissions, and rich text editing.
+#### Email Sending / Contact Form (1 - 2 days)
+- Automated notifications and reminders. Needs integration with email services and handling of delivery errors.
+#### Video Player (2 days - 1 week)
+- Embed and play videos. Slightly longer if supporting multiple formats and devices.
+#### Stripe / Other payment services (1 - 2 weeks)
+- Payment processing for subscriptions or services. Takes longer due to security, compliance, and testing payment flows.
+
+#### SEO
+##### Basic (2 - 5 days)
+- Meta tags, titles, and descriptions. Straightforward but needs attention to detail.
+- **Features Needed:**
+  - Meta tags (title, description, keywords)
+  - Open Graph and Twitter Card tags
+  - Canonical URLs
+  - Sitemap generation
+  - Robots.txt configuration
+  - Alt text for images
+  - Clean, semantic HTML structure
+
+##### Advanced (1 week)
+- Structured data, sitemaps, and performance optimizations. More time for research and testing.
+- **Features Needed:**
+  - Structured data (JSON-LD, schema.org)
+  - Dynamic sitemap updates
+  - Automated meta tag population
+  - Performance optimizations (Core Web Vitals)
+  - Lazy loading of images and assets
+  - Internationalization (hreflang tags)
+  - SEO audit and reporting tools
+
+#### Locality (Multiple Languages) (1.5 weeks)
+- Support for multiple languages. Takes longer due to translation, formatting, and testing.
+
+#### Authentication (1 week)
+- User login, registration, and permissions. Security and testing add to the timeline.
+
+#### Custom Backend (2 weeks)
+- API development, database design, and integrations. Takes longer for scalability, security, and documentation.
+
+--- 
+
+## Design / Branding / UI/UX Design (3 days - 2 weeks)
+- Custom design, branding, and user experience. Involves multiple iterations and feedback cycles.
+
+## Retainer / Platform Management
+- Ongoing support and maintenance. Time for setup and documentation.
+
+---
+
+## Why Does The Development Take Longer Than Expected?
+- **Integration**: Many features depend on each other and require careful integration and testing.
+- **Testing & Debugging**: Ensuring everything works smoothly takes time, especially with edge cases.
+- **Optimizations**: Must work on multiple devices without suffering bad fps. 
+- **Feedback & Iteration**: Design and features often need changes after user feedback.
+- **Security & Compliance**: Features like payments and authentication require extra care.
+- **Documentation**: Writing clear docs and onboarding materials adds to the timeline.
+
+---
+
+## Estimated Project Duration
+
+### Scenario 1
+**Pages/Features:**
+- 1 Static Content Page
+- 1 List Page
+- Basic SEO
+- CMS
+- Email Sending
+
+#### Team A: 1 Frontend Developer, 1 UI/UX Designer
+| Task/Feature         | UI/UX Design | Frontend Dev | Notes                                  | Lowest (d) | Highest (d) |
+|----------------------|:------------:|:------------:|----------------------------------------|:----------:|:-----------:|
+| Static Content Page  | 0.5          | 0.5          | Simple, minimal interactivity          | 1          | 2           |
+| List Page            | 1            | 1.5          | Includes data fetching, display        | 2          | 3.5         |
+| Basic SEO            | 0.5          | 1            | Meta tags, sitemap, etc.               | 1.5        | 2           |
+| CMS (basic)          | 1            | 3            | Admin UI, content CRUD                 | 4          | 5           |
+| Email Sending        | 0.5          | 1            | Integration, form, feedback            | 1.5        | 2           |
+| Components           | 0.5          | 3            | Common UI elements, reusable           | 3.5        | 7           |
+| **Total**            | **4.5**      | **10**       |                                        | **13.5**   | **21.5**    |
+
+> Frontend and Fullstack works in parallel, so they will take the highest days from the two, so UI/UX 4.5d + Frontend Dev 6.5d = 11d
+#### Team B: 1 Frontend Developer, 1 Fullstack Developer, 1 UI/UX Designer
+| Task/Feature         | UI/UX Design | Frontend Dev | Fullstack Dev | Notes                                  | Lowest (d) | Highest (d) |
+|----------------------|:------------:|:------------:|:-------------:|----------------------------------------|:----------:|:-----------:|
+| Static Content Page  | 0.5          | 0.5          | -             |                                        | 1          | 2           |
+| List Page            | 1            | 1            | 0.5           | Backend for data                       | 2          | 3           |
+| Basic SEO            | 0.5          | 0.5          | 0.5           | Backend for sitemap, etc.              | 1.5        | 2           |
+| CMS (basic)          | 1            | 1            | 2             | Backend for content management         | 4          | 5           |
+| Email Sending        | 0.5          | 0.5          | 0.5           | Backend for email integration          | 1.5        | 2           |
+| Components           | 0.5          | 3            | -             | Common UI elements, reusable           | 3.5        | 7           |
+| **Total**            | **4.5**      | **6.5**      | **3.5**       |                                        | **13.5**   | **21**      |
+
+> **Parallel Work Calculation:**
+> Frontend and Fullstack work in parallel, so take the higher of the two for total development time. Total project duration = UI/UX + max(Frontend, Fullstack).
+>
+> - **Lowest:** UI/UX (4.5d) + max(Frontend 6.5d, Fullstack 3.5d) = 11 days
+> - **Highest:** UI/UX (4.5d) + max(Frontend 6.5d, Fullstack 3.5d) = 11 days
+>
+> **In weeks and days:**
+> - 11 days straight = 1 week, 4 days
+> - 11 working days (no weekends) = 2 weeks, 1 day
+
+---
+
+### Scenario 2
+**Pages/Features:**
+- 2 Static Content Pages
+- 1 List Page
+- 1 Detail Page
+- 2 Form Pages
+- 1 Profile Page
+- 1 Settings Page
+- Advanced SEO
+
+#### Team A: 1 Frontend Developer, 1 UI/UX Designer
+| Task/Feature         | UI/UX Design | Frontend Dev | Notes                                  | Lowest (d) | Highest (d) |
+|----------------------|:------------:|:------------:|----------------------------------------|:----------:|:-----------:|
+| Static Content Pages (2) | 1      | 1           |                                        | 2          | 4           |
+| List Page            | 1            | 1.5         |                                        | 2          | 3.5         |
+| Detail Page          | 0.5          | 1           | Dynamic routing                        | 1.5        | 3           |
+| Form Pages (2)       | 1            | 2           | Validation, feedback, integration      | 3          | 5           |
+| Profile Page         | 0.5          | 1           | Auth, data fetching                    | 1.5        | 3           |
+| Settings Page        | 0.5          | 1           | Auth, data fetching                    | 1.5        | 3           |
+| Advanced SEO         | 1            | 2           | Structured data, performance, etc.     | 3          | 4           |
+| Components           | 0.5          | 3           | Common UI elements, reusable           | 3.5        | 7           |
+| **Total**            | **7.5**      | **12.5**    |                                        | **18**     | **32.5**    |
+
+#### Team B: 1 Frontend Developer, 1 Fullstack Developer, 1 UI/UX Designer
+| Task/Feature         | UI/UX Design | Frontend Dev | Fullstack Dev | Notes                                  | Lowest (d) | Highest (d) |
+|----------------------|:------------:|:------------:|:-------------:|----------------------------------------|:----------:|:-----------:|
+| Static Content Pages (2) | 1      | 1           | -             |                                        | 2          | 4           |
+| List Page            | 1            | 1           | 0.5           | Backend for data                       | 2          | 3           |
+| Detail Page          | 0.5          | 0.5         | 0.5           | Backend for item details               | 1.5        | 2.5         |
+| Form Pages (2)       | 1            | 1           | 1             | Backend for form handling              | 3          | 4           |
+| Profile Page         | 0.5          | 0.5         | 1             | Auth, data fetching                    | 2          | 3           |
+| Settings Page        | 0.5          | 0.5         | 1             | Auth, data fetching                    | 2          | 3           |
+| Advanced SEO         | 1            | 1           | 1             | Backend for dynamic SEO, sitemaps      | 3          | 4           |
+| Components           | 0.5          | 3           | -             | Common UI elements, reusable           | 3.5        | 7           |
+| **Total**            | **7.5**      | **8.5**     | **4.5**       |                                        | **19.5**   | **30.5**    |
+
+> **Parallel Work Calculation:**
+> Frontend and Fullstack work in parallel, so take the higher of the two for total development time. Total project duration = UI/UX + max(Frontend, Fullstack).
+>
+> - **Lowest:** UI/UX (7.5d) + max(Frontend 8.5d, Fullstack 4.5d) = 16 days
+> - **Highest:** UI/UX (7.5d) + max(Frontend 8.5d, Fullstack 4.5d) = 16 days
+>
+> **In weeks and days:**
+> - 16 days straight = 2 weeks, 2 days
+> - 16 working days (no weekends) = 3 weeks, 1 day
+
+---
+
+
+If you need a more detailed breakdown or want to adjust for your specific team, let us know!
+
